@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>HTML</title>
+  <meta charset="utf-8">
+
+  <style>
+    /** Header Position */
+      .Header{
+        position: relative;
+        left: 50%;
+        margin-left: -134px;
+      }
+    /** Race Composents Position */
+      .RaceComposent{
+          text-align: center
+        }
+    /** Contestants */
+      .Contestant{
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        position : relative
+      }
+      .First{
+        background-color: #cc0000
+      }
+      .Second{
+        background-color: #D5C000;
+        top : 2px
+      }
+    /** FinishLine */
+      .FinishLine{
+        width: 10px;
+        float: left;
+        margin-left;
+        height: 100px;
+        background-color: #ffffff
+      }
+      /** Body */
+      .body{
+        background-color: #000
+      }
+  </style>
+</head>
+
+<body class="body">
+  <!-- Header image -->
+    <img id=header class="Header" src="./images/header.png"></img>
+
+  <!-- Jump line --></br></br>
+
+  <!-- New FinishLine + Start new race button -->
+    <div class="RaceComposent">
+      <!-- Where to write a new position of the FinishLine -->
+        <input id="finish"  type="number" value="200">
+      <!-- Start new race button -->
+        <input id="btn" type="submit" value="Start New Race">
+    </div>
+
+  <!-- Jump line --></br></br></br>
+
+  <!-- FinishLine -->
+    <div id ="finishLine" class="FinishLine"></div>
+
+  <!-- Contestants -->
+    <!-- First Contestant -->
+      <div id ="firstContestant" class="First Contestant"></div>
+    <!-- Second Contestant -->
+      <div id ="secondContestant" class="Second Contestant"></div>
+
+  <!-- Scripts -->
+    <script src="./javascripts/script.js"></script>
+
+</body>
+</html>
