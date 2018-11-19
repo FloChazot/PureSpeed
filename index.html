@@ -53,7 +53,8 @@
   <!-- New FinishLine + Start new race button -->
     <div class="RaceComposent">
       <!-- Where to write a new position of the FinishLine -->
-        <input id="finish"  type="number" value="300">
+        <input id="finishLineSelectBox" type="number" onkeyup="finishLinePlace()" value="200">
+         <!--  -->
       <!-- Start new race button -->
         <input id="btn" type="submit" value="Start New Race">
     </div>
@@ -70,7 +71,8 @@
       <div id ="secondContestant" class="Second Contestant"></div>
 
   <!-- Scripts -->
-    <script src="./javascripts/script.js"></script>
-
+    <script src="./javascripts/finishLine.js"></script>
+    <script src="./javascripts/vitesseDeplacement.js"></script>
+    <script src="./javascripts/script2.js"></script>
 </body>
 </html>

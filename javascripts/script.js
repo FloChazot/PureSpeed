@@ -1,7 +1,5 @@
 let firstCubeElement = document.getElementById("firstContestant");
 let secondCubeElement = document.getElementById("secondContestant");
-console.log(document.body.style);
-
 
 let firstCubePosition = 0;
 let secondCubePosition = 0;
@@ -30,9 +28,8 @@ btn.onclick = function(newRace){
   let firstCubeInterval = setInterval(function(){
   if(firstCubePosition >= newfinish-40){
     clearInterval(firstCubeInterval)}
-    else {firstCubePosition += Math.round(Math.random()*5) ;
-    firstCubeElement.style.left = firstCubePosition + "px"
-    ;
+    else {firstCubePosition += Math.round(Math.random()*5);
+    firstCubeElement.style.left = firstCubePosition + "px";
   }}, 32);
 
   /** Second Cube déplacement*/
