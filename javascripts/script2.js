@@ -23,10 +23,20 @@ btn.onclick = function(newRace){
   clearInterval(firstContestantInterval);
   clearInterval(secondContestantInterval);
 
+let finishLineMarginLeft = document.getElementById("finishLineSelectBox").value;
+let finishLine = finishLineMarginLeft - constestantSize;
+console.log("finishLineMarginLeft :" + finishLineMarginLeft);
+console.log("constestantSize :" + constestantSize);
+console.log("Balle Finish :" + finishLine);
+
   /** First Contestant déplacement*/
     firstContestantInterval = setInterval(function(){
-    if(firstContestantPosition >= finishLineMarginLeft - constestantSize){
-      clearInterval(firstContestantInterval)}
+    let finishLineMarginLeft = document.getElementById("finishLineSelectBox").value;
+    if(firstContestantPosition >= finishLine){
+      firstContestantElement.style.left = finishLine + "px";
+      clearInterval(firstContestantInterval)
+      console.log("firstContestantPosition : " + firstContestantPosition);
+    }
       else {firstContestantPosition += vitesseDeplacement ();
       firstContestantElement.style.left = firstContestantPosition + "px";
       // console.log(firstContestantPosition)
@@ -34,9 +44,17 @@ btn.onclick = function(newRace){
 
   /** Second Contestant déplacement*/
     secondContestantInterval = setInterval(function(){
-    if(secondContestantPosition >= finishLineMarginLeft - constestantSize){
-      clearInterval(secondContestantInterval)}
+    let finishLineMarginLeft = document.getElementById("finishLineSelectBox").value;
+    if(secondContestantPosition >= finishLine){
+
+      clearInterval(secondContestantInterval)
+      console.log("secondContestantPosition : " + secondContestantPosition);
+    }
       else {secondContestantPosition += vitesseDeplacement ();
-      secondContestantElement.style.left = secondContestantPosition + "px"
-    }}, 32);
+      if(secondContestantPosition >= finishLine){
+        firstContestantElement.style.left = finishLine + "px";
+      }else{
+        secondContestantElement.style.left = secondContestantPosition + "px"
+    }}}, 32);
+
 }
