@@ -10,7 +10,6 @@ let secondContestantInterval = 0;
 let elementStyleLeft = 0;
 let elementStyleTop = 0;
 
-
 /**  Start new race button */
 btn.onclick = function(newRace){
   newRace.preventDefault();
@@ -26,15 +25,16 @@ btn.onclick = function(newRace){
 
   /** First Contestant déplacement*/
     firstContestantInterval = setInterval(function(){
-    if(firstContestantPosition >= finishLine - 40){
+    if(firstContestantPosition >= finishLineMarginLeft - constestantSize){
       clearInterval(firstContestantInterval)}
       else {firstContestantPosition += vitesseDeplacement ();
       firstContestantElement.style.left = firstContestantPosition + "px";
+      // console.log(firstContestantPosition)
     }}, 32);
 
   /** Second Contestant déplacement*/
     secondContestantInterval = setInterval(function(){
-    if(secondContestantPosition >= finishLine-40){
+    if(secondContestantPosition >= finishLineMarginLeft - constestantSize){
       clearInterval(secondContestantInterval)}
       else {secondContestantPosition += vitesseDeplacement ();
       secondContestantElement.style.left = secondContestantPosition + "px"

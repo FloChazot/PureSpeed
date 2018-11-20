@@ -5,7 +5,7 @@
   <meta charset="utf-8">
 
   <style>
-    /** Header Position */
+      /** Header Position */
       .Header{
         position: relative;
         left: 50%;
@@ -13,21 +13,28 @@
       }
     /** Race Composents Position */
       .RaceComposent{
-          text-align: center
+          text-align: center;
+        }
+      /** Box */
+        .Box{
+          width: 40px;
+          height: 40px;
+          border-radius: 50px;
+          text-align: center;
         }
     /** Contestants */
       .Contestant{
-        width: 50px;
-        height: 50px;
-        border-radius: 50px;
-        position : relative
+        width: 0;
+        height: 0;
+        border-radius: 0;
+        position : relative;
       }
       .First{
-        background-color: #cc0000
+        background-color: #cc0000;
       }
       .Second{
         background-color: #D5C000;
-        top : 2px
+        top : 2px;
       }
     /** FinishLine */
       .FinishLine{
@@ -35,7 +42,11 @@
         float: left;
         margin-left;
         height: 100px;
-        background-color: #ffffff
+        background-color: #ffffff;
+      }
+      .Text{
+        color: #B5B5B5;
+        font-Family: Impact, Arial;
       }
       /** Body */
       .body{
@@ -50,20 +61,27 @@
 
   <!-- Jump line --></br></br>
 
-  <!-- New FinishLine + Start new race button -->
+  <!-- New FinishLine + Contestant size -->
     <div class="RaceComposent">
       <!-- Where to write a new position of the FinishLine -->
-        <input id="finishLineSelectBox" type="number" onkeyup="finishLinePlace()" value="200">
-         <!--  -->
-      <!-- Start new race button -->
-        <input id="btn" type="submit" value="Start New Race">
+        <label for="finishLineSelectBox" class="Text">Distance Parcours</label>
+        <input id="finishLineSelectBox" name="finishLineSelectBox" class ="Box RaceComposent" onkeyup="finishLinePlace()" value="250">
+      <!-- Contestant size -->
+        <input id="contestantSizeSelectBox" class ="Box RaceComposent" onkeyup="constestantSizeChange()" value="50">
+        <label for="contestantSizeSelectBox" class="Text">Taille Concurrents</label>
+    </div>
+
+<!-- Jump line --></br></br>
+
+  <!-- Start new race button -->
+    <div class="RaceComposent">
+        <input id="btn" type="submit" class="active RaceComposent" value="Start New Race">
     </div>
 
   <!-- Jump line --></br></br></br>
 
   <!-- FinishLine -->
-    <div id ="finishLine" class="FinishLine"></div>
-
+      <div id ="finishLine" class="FinishLine"></div>
   <!-- Contestants -->
     <!-- First Contestant -->
       <div id ="firstContestant" class="First Contestant"></div>
@@ -71,6 +89,7 @@
       <div id ="secondContestant" class="Second Contestant"></div>
 
   <!-- Scripts -->
+    <script src="./javascripts/constestantSize.js"></script>
     <script src="./javascripts/finishLine.js"></script>
     <script src="./javascripts/vitesseDeplacement.js"></script>
     <script src="./javascripts/script2.js"></script>

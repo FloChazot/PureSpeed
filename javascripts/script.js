@@ -1,42 +1,42 @@
-let firstCubeElement = document.getElementById("firstContestant");
-let secondCubeElement = document.getElementById("secondContestant");
+let firstContestantElement = document.getElementById("firstContestant");
+let secondContestantElement = document.getElementById("secondContestant");
 
-let firstCubePosition = 0;
-let secondCubePosition = 0;
+let firstContestantPosition = 0;
+let secondContestantPosition = 0;
+
+let firstContestantInterval = 0;
+let secondContestantInterval = 0;
 
 let elementStyleLeft = 0;
 let elementStyleTop = 0;
 
-let newfinish = document.getElementById("finish").value;
-document.getElementById("finishLine").style.marginLeft = newfinish + "px";
 
 /**  Start new race button */
 btn.onclick = function(newRace){
   newRace.preventDefault();
 
-  /* Récupération de la distance à parcourir*/
-  let newfinish = document.getElementById("finish").value;
-  document.getElementById("finishLine").style.marginLeft = newfinish + "px";
-
   /** Reset de la position des ronds pour le départ*/
-  firstCubePosition = 0;
-  firstCubeElement.style.left = firstCubePosition + "px";
-  secondCubePosition = 0;
-  secondCubeElement.style.left = secondCubePosition + "px";
+  firstContestantPosition = 0;
+  firstContestantElement.style.left = firstContestantPosition + "px";
+  secondContestantPosition = 0;
+  secondContestantElement.style.left = secondContestantPosition + "px";
 
-  /** Premier Cube déplacement*/
-  let firstCubeInterval = setInterval(function(){
-  if(firstCubePosition >= newfinish-40){
-    clearInterval(firstCubeInterval)}
-    else {firstCubePosition += Math.round(Math.random()*5);
-    firstCubeElement.style.left = firstCubePosition + "px";
-  }}, 32);
+  clearInterval(firstContestantInterval);
+  clearInterval(secondContestantInterval);
 
-  /** Second Cube déplacement*/
-  let secondCubeInterval = setInterval(function(){
-  if(secondCubePosition >= newfinish-40){
-    clearInterval(secondCubeInterval)}
-    else {secondCubePosition += Math.round(Math.random()*5) ;
-    secondCubeElement.style.left = secondCubePosition + "px"
-  }}, 32);
+  /** First Contestant déplacement*/
+    firstContestantInterval = setInterval(function(){
+    if(firstContestantPosition >= finishLine - 40){
+      clearInterval(firstContestantInterval)}
+      else {firstContestantPosition += vitesseDeplacement ();
+      firstContestantElement.style.left = firstContestantPosition + "px";
+    }}, 32);
+
+  /** Second Contestant déplacement*/
+    secondContestantInterval = setInterval(function(){
+    if(secondContestantPosition >= finishLine-40){
+      clearInterval(secondContestantInterval)}
+      else {secondContestantPosition += vitesseDeplacement ();
+      secondContestantElement.style.left = secondContestantPosition + "px"
+    }}, 32);
 }
