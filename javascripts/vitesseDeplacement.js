@@ -1,7 +1,7 @@
 // Fonction déterminant la vitesse de déplacement du Contestant
 // en fonction d'une variable aléatoire Math.random.
 
-function vitesseDeplacement (vitesse){
+function vitesseDeplacement (){
   let random =  Math.random();
   if(random <0.1){
     vitesse = 0;

@@ -1,42 +1,42 @@
-let firstContestantElement = document.getElementById("firstContestant");
-let secondContestantElement = document.getElementById("secondContestant");
+let contestantPosition = 0;
+let contestantInterval = 0;
 
-let firstContestantPosition = 0;
-let secondContestantPosition = 0;
+race.onclick = function(race){
+race.preventDefault();
 
-let firstContestantInterval = 0;
-let secondContestantInterval = 0;
+racecontestant ();
+// let contestantElements = document.getElementsByClassName("contestant");
+//
+// contestantElements.forEach(racecontestant())
 
-let elementStyleLeft = 0;
-let elementStyleTop = 0;
 
+// console.log("contestantNumber : " + contestantNumber);
 
-/**  Start new race button */
-btn.onclick = function(newRace){
-  newRace.preventDefault();
+// let i = 1;
+// while(i<=contestantNumber){
+// console.log("go "+ i);
+// racecontestant ("contestant" + i);
+// i++;
+//
+// let i = 1;
+// if(contestantNumber != 0){
+//   if(i <= contestantNumber){
+//     racecontestant ("contestant" + i);
+//     i += 1;
+//     ;
+//   }
+//
+// for each(var i in x)
+//
+// }
+// };
+//
+// check.onclick = function(check){
+// check.preventDefault();
+//
+// for(i=1; i<=contestantNumber;i++){
+// let contestant = "contestant" + i;
+// console.log(contestant);
+// }
 
-  /** Reset de la position des ronds pour le départ*/
-  firstContestantPosition = 0;
-  firstContestantElement.style.left = firstContestantPosition + "px";
-  secondContestantPosition = 0;
-  secondContestantElement.style.left = secondContestantPosition + "px";
-
-  clearInterval(firstContestantInterval);
-  clearInterval(secondContestantInterval);
-
-  /** First Contestant déplacement*/
-    firstContestantInterval = setInterval(function(){
-    if(firstContestantPosition >= finishLine - 40){
-      clearInterval(firstContestantInterval)}
-      else {firstContestantPosition += vitesseDeplacement ();
-      firstContestantElement.style.left = firstContestantPosition + "px";
-    }}, 32);
-
-  /** Second Contestant déplacement*/
-    secondContestantInterval = setInterval(function(){
-    if(secondContestantPosition >= finishLine-40){
-      clearInterval(secondContestantInterval)}
-      else {secondContestantPosition += vitesseDeplacement ();
-      secondContestantElement.style.left = secondContestantPosition + "px"
-    }}, 32);
-}
+};

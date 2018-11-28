@@ -14,7 +14,11 @@ document.getElementById("finishLine").style.marginLeft = finishLineMarginLeft + 
 // Appelé dans constestantSize.js => constestantSizeChange()
 // +2 => Pixels écartant les deux contestants : index.html => .Second.top
 function constestantSizeChangeFinishLine(){
-document.getElementById("finishLine").style.height = (constestantSize * 2 + 2) + "px";
+if(contestantNumber > 0){
+document.getElementById("finishLine").style.height = ((Number(constestantSize) + 5) * contestantNumber + 5) + "px";
 document.getElementById("finishLine").style.marginLeft = (constestantSize * 4) + "px";
 document.getElementById("finishLineSelectBox").value = constestantSize * 4;
+}else{
+document.getElementById("finishLine").style.height = 0 + "px";
+}
 };
