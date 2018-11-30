@@ -20,4 +20,5 @@ function vitesseDeplacement (){
     // console.log("- V2 - 5     " + random + "  --  " + vitesse);
   }
   return vitesse;
+  vitesse.clear();
 }

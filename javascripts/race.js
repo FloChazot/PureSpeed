@@ -1,78 +1,35 @@
-// let contestantElements = document.getElementsByClassName("contestant");
-
 function racecontestant (){
-    /** Récupération du concurrent*/
+  let continueRace = true;
+  
+  contestantElements.forEach(function (element){
+    let contestantPosition = parseInt(getComputedStyle(element)["left"]);
 
-      let contestantElements = Array.prototype.slice.call(document.getElementsByClassName("contestant"));
-
-      contestantElements.forEach(function (element){
-
-        // clearInterval(contestantInterval);
-          /** Reset de la position des ronds pour le départ*/
-            contestantPosition = 0;
-            element.style.left = contestantPosition + "px";
-
-          /** Reset de l'interval de la fonction*/
-            // clearInterval(contestantInterval);
-
-          /** Récupération de la finishline */
-            let finishLineMarginLeft = document.getElementById("finishLineSelectBox").value;
-            let finishLine = finishLineMarginLeft - constestantSize;
-
-          /** Fonction de course */
-            contestantInterval = setInterval(function(){
-              clearInterval(contestantInterval);
-            if(contestantPosition <= finishLine){
-
-              contestantPosition += vitesseDeplacement ();
-              // console.log(contestantPosition);
-                if(contestantPosition <= finishLine){
-                  element.style.left = contestantPosition + "px"
-                  }else{
-                  element.style.left = finishLine + "px";
-                  }
-              }else{
-              element.style.left = finishLine + "px";
-              clearInterval(contestantInterval);
-              }
-            }, 32);
-          });
-
-      };
-
-
-//
-// // console.log(typeof contestantElements);
-// contestantElements(function (e) {
-//   console.log(e);
-// });
-// };
-
-function fff (){
     /** Reset de la position des ronds pour le départ*/
-      contestantPosition = 0;
-      contestantElement.style.left = contestantPosition + "px";
-
-    /** Reset de l'interval de la fonction*/
-      clearInterval(contestantInterval);
+    //let contestantPosition = 0;
+    contestantInterval = 0;
+    element.style.left = contestantPosition + "px";
 
     /** Récupération de la finishline */
-      let finishLineMarginLeft = document.getElementById("finishLineSelectBox").value;
-      let finishLine = finishLineMarginLeft - constestantSize;
+    let finishLineMarginLeft = document.getElementById("finishLineSelectBox").value;
+    let finishLine = finishLineMarginLeft - constestantSize;
 
     /** Fonction de course */
-      contestantInterval = setInterval(function(){
-      if(contestantPosition <= finishLine){
-        contestantPosition += vitesseDeplacement (contestant);
-        console.log(contestantPosition);
-          if(contestantPosition <= finishLine){
-            contestantElement.style.left = contestantPosition + "px"
-            }else{
-            contestantElement.style.left = finishLine + "px";
-            }
+    contestantInterval = setInterval(function(){
+      if(continueRace && contestantPosition < finishLine){
+
+        contestantPosition += vitesseDeplacement ();
+        if(contestantPosition < finishLine){
+          console.log("P1 : " + element.id + " : "  + element.style.left + " + " + vitesse + " => " + contestantPosition);
+          element.style.left = contestantPosition + "px";
         }else{
-        contestantElement.style.left = finishLine + "px";
-        clearInterval(contestantInterval)
+          continueRace = false;
+          console.log("P2 : " + element.id + " : "  + element.style.left + " + " + vitesse + " => " + contestantPosition);
+          element.style.left = finishLine + "px";
+          console.log("P2C : " + element.id + " : "  + element.style.left);
+          clearInterval(contestantInterval);
         }
-      }, 32);
-    }
+      }
+    }, 32);
+
+  });
+}
