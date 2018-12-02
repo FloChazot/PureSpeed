@@ -4,63 +4,44 @@
   <title>HTML</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="./css/main.css">
-
 </head>
 
 <body class="body">
-
-  <!-- Header image -->
-    <img id=header class="header" src="./images/header.png">
-
-  <!-- Jump line --></br></br>
+<!-- Header image -->
+  <img id=header class="header" src="./images/header.png">
+<!-- Jump line --></br></br>
 
   <div>
    <button id="removeContestantButton" class="button" name="removeContestant">-</button>
    <button id="addContestantButton" class="button" name="addContestant">+</button>
-   <button id="check" class="button" name="Check">Check</button>
   </div>
-  <div id="contestantList">
+<!-- New FinishLine + Contestant size -->
+  <div class="raceComposent">
+    <!-- Where to write a new position of the FinishLine -->
+      <label for="finishLineSelectBox" class="text">Distance Parcours</label>
+      <input id="finishLineSelectBox" name="finishLineSelectBox" class ="box raceComposent" onkeyup="finishLinePlace()" value="250">
   </div>
+<!-- Jump line --></br>
+<!-- Start race button -->
+  <div class="raceComposent">
+      <button id="startRaceButton" class="raceComposent" name"startRace">Start Race</button>
+  </div>
+<!-- Jump line --></br>
+<!-- FinishLine -->
 
+  <!-- Jump line --></br>
+  <div id="course">
+  <div id ="finishLine" class="finishLine"></div>
+  <div id ="container"></div>
+  <div id = contestantsPositionsContainer></div>
+</div>
 
-  <!-- New FinishLine + Contestant size -->
-    <div class="RaceComposent">
-      <!-- Where to write a new position of the FinishLine -->
-        <label for="finishLineSelectBox" class="Text">Distance Parcours</label>
-        <input id="finishLineSelectBox" name="finishLineSelectBox" class ="Box RaceComposent" onkeyup="finishLinePlace()" value="250">
-      <!-- Contestant size -->
-        <input id="contestantSizeSelectBox" class ="Box RaceComposent" onkeyup="constestantSizeChange()" value="50">
-        <label for="contestantSizeSelectBox" class="Text">Taille Concurrents</label>
-    </div>
-
-<!-- Jump line --></br></br>
-
-  <!-- Start new race button -->
-    <!-- <div class="RaceComposent">
-        <input id="race" type="submit" class="active RaceComposent" value="Start New Race">
-    </div> -->
-    <div class="RaceComposent">
-        <input id="race" type="submit" class="active RaceComposent" value="Start New Race">
-    </div>
-
-  <!-- Jump line --></br></br></br>
-
-  <!-- FinishLine -->
-      <div id ="finishLine" class="finishLine"></div>
-  <!-- Contestants -->
-    <!-- First Contestant -->
-      <!-- <div id ="firstContestant" class="First contestant"></div> -->
-    <!-- Second Contestant -->
-      <!-- <div id ="secondContestant" class="Second contestant"></div> -->
-
-  <!-- Scripts -->
-
-    <script src="./javascripts/selectContestant.js"></script>
-    <script src="./javascripts/race.js"></script>
-    <script src="./javascripts/constestantSize.js"></script>
-    <script src="./javascripts/finishLine.js"></script>
-    <script src="./javascripts/vitesseDeplacement.js"></script>
-    <script src="./javascripts/script.js"></script>
-
+<!-- Scripts -->
+  <script src="./javascripts/finishLine.js"></script>
+  <script src="./javascripts/selectContestant.js"></script>
+  <script src="./javascripts/startRace.js"></script>
+  <script src="./javascripts/vitesseDeplacement.js"></script>
+  <script src="./javascripts/contestantFinishPosition.js"></script>
+  <script src="./javascripts/script.js"></script>
 </body>
 </html>

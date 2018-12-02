@@ -4,7 +4,7 @@ addContestantButton.onclick = function (){
   let newContestant = document.createElement('div');
   newContestant.id = contestantId + contestantElements.length;
   newContestant.className = contestantClass;
-  document.body.appendChild(newContestant);
+  contestantsPositionsContainer.appendChild(newContestant);
 
   /** Mise à jour du tableau contestantElements après création */
   contestantElements = Array.prototype.slice.call(document.getElementsByClassName(contestantClass));
@@ -12,7 +12,6 @@ addContestantButton.onclick = function (){
   /** Modification de la hauteur de la finishLine*/
   constestantSizeChangeFinishLine()
 };
-
 
 /** Supprimer le dernier concurrent */
 removeContestantButton.onclick = function (remove){
