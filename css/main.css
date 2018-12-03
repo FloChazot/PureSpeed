@@ -10,7 +10,19 @@
 .button{
   cursor: pointer;
   border-radius: 50%;
-  background-color: #55a5ff;
+  color: #C0C0C0;
+  text: #fff;
+}
+
+.buttonplus{
+  cursor: pointer;
+  border-radius: 50%;
+  color: #FFD700;
+  text: #fff;
+}
+.flag{
+  cursor: pointer;
+  color: #FFD700;
 }
 
 /** Race Composents Position */
@@ -21,14 +33,17 @@
 /** Box */
 .box{
   width: 40px;
-  height: 40px;
-  border-radius: 50px;
+  height: 20px;
+  border-radius: 5px;
   text-align: center;
+  color: #C0C0C0;
+  /* text: #FFD700; */
+  font-weight: bold;
 }
 
 /** Contestants */
 .course{
-  top : 180px;
+  top : 250px;
   position:absolute;
 }
 

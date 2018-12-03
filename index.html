@@ -4,42 +4,34 @@
   <title>HTML</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="./css/main.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 </head>
 
 <body class="body">
 <!-- Header image -->
-  <!-- <img id=header class="header" src="./images/header.png"> -->
+  <img id=header class="header" src="./images/header.png">
 <!-- Jump line --></br></br>
 
-  <div>
-   <button id="removeContestantButton" class="button" name="removeContestant">-</button>
-   <button id="addContestantButton" class="button" name="addContestant">+</button>
-  </div>
-<!-- New FinishLine + Contestant size -->
   <div class="raceComposent">
+   <label class="text">Concurrents</label>
+   <i id="removeContestantButton" class="button fas fa-minus-circle" onclick="removeContestantButton()"></i>
+   <i id="addContestantButton" class="buttonplus fas fa-plus-circle" onclick="addContestantButton()"></i>
+<!-- Jump line --></br></br>
     <!-- Where to write a new position of the FinishLine -->
       <label for="finishLineSelectBox" class="text">Distance Parcours</label>
-      <input id="finishLineSelectBox" name="finishLineSelectBox" class ="box raceComposent" onkeyup="finishLinePlace()" value="100">
+      <input id="finishLineSelectBox" name="finishLineSelectBox" class ="box raceComposent" onkeyup="finishLinePlace()" value="400">
+    <!-- Start race button -->
+      <i id="startRaceButton" class="flag fas fa-flag-checkered" onclick="startRace()"></i>
   </div>
 <!-- Jump line --></br>
-<!-- Start race button -->
-  <div class="raceComposent">
-      <button id="startRaceButton" class="raceComposent" name"startRace">Start Race</button>
-  </div>
-<!-- Jump line --></br>
+
 <!-- FinishLine -->
-
   <!-- Jump line --></br>
-
   <div id="course" class="course">
     <div id ="finishLine" class="finishLine"></div>
     <div id ="contestantsPositionsContainer"></div>
     <div id="contestantsFinishsPositionscontainer"></div>
   </div>
-
-
-  <i class="fas fa-trophy"></i>
-
 
 <!-- Scripts -->
   <script src="./javascripts/finishLine.js"></script>

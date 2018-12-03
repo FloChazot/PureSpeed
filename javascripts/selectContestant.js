@@ -1,5 +1,5 @@
 /** Créer un nouveau concurrent */
-addContestantButton.onclick = function (){
+ function addContestantButton (){
   /** Création */
   let newContestant = document.createElement('div');
   newContestant.id = contestantId + contestantElements.length;
@@ -16,7 +16,7 @@ addContestantButton.onclick = function (){
 
 
 /** Supprimer le dernier concurrent */
-removeContestantButton.onclick = function (remove){
+function removeContestantButton (remove){
   /** Suppression */
   if(contestantElements.length > 0){
     let remove = contestantId + (contestantElements.length - 1);

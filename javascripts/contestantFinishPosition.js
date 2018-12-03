@@ -1,58 +1,53 @@
 /** Créer un nouveau concurrent */
 let podiumStep = 0;
-let color;
-function contestantFinishPosition (id, offsetTop){
+let flip = 0;
+let stoprun = false;
+
+function contestantFinishPosition (id, offsetTop, continueRace){
   let contestantFinishPositionNumber = id.substr(10);
   let constestantSizeNumber = Number(constestantSize);
   let newfinishPositionLeft = Number(document.getElementById("finishLineSelectBox").value) + 20 + "px";
-  let newpodium =
 
-  podium (podiumStep);
-    function podium(b){
-      if(podiumStep>=0){
+  podiumStep = podium();
+    function podium(){
+      if(podiumStep == 0){
+        trophy = '<i class="fas fa-trophy" color="#FFD700"></i>';
         podiumStep++;
-        return podiumStep;
-      }
+      }else if(podiumStep == 1){
+        trophy = '<i class="fas fa-trophy" color=#C0C0C0></i';
+        podiumStep++;
+      }else if(podiumStep == 2){
+        trophy = '<i class="fas fa-trophy" color=#cd7f32></i>';
+        podiumStep++;
+      }else{
+        trophy = '<i class="fas fa-certificate" color="#000"></i>';
+        podiumStep++;
+      }return podiumStep;
     };
 
+  /** Création des données à injecter */
+  let newfinishPosition = document.createElement('div');
+  newfinishPosition.id = contestantId + "finishPosition"+ id;
+  newfinishPosition.className = "contestantFinishPosition";
+  newfinishPosition.style.left = newfinishPositionLeft;
+  newfinishPosition.style.top = contestantFinishPositionNumber * 55 + 13 + "px";
+  newfinishPosition.style.fontSize = "2em";
+  newfinishPosition.innerHTML = trophy;
 
-function podium (color, podiumStep){
-      switch (podiumStep) {
-        case "0":
-          console.log(1er),
-          color = "#FFD700",
-          podiumStep++;
-          break;
-        case 1:
-        console.log(2eme),
-          color = "#C0C0C0",
-          podiumStep++;
-          break;
-        case 2:
-        console.log(3eme),
-          color = "#C0C0C0",
-          podiumStep++;
-          break;
-        default:
-        podiumStep++;
-        color = "#000";
+  /** Création de la div */
+  contestantsPositionsContainer.appendChild(newfinishPosition);
+
+
+  flip = flips();
+    function flips(){
+      if(flip < contestantElements.length - 1){
+        continueRace = true;
+        startRace(continueRace);
+        flip++;
+      }else{
+      stoprun = true;
       }
-    }
-
-console.log("color : " + color);
-console.log("podiumStep : " + podiumStep);
-
-    /** Création des données à injecter */
-    let newfinishPosition = document.createElement('div');
-    newfinishPosition.id = contestantId + "finishPosition"+ id;
-    newfinishPosition.className = "contestantFinishPosition";
-    newfinishPosition.style.left = newfinishPositionLeft;
-    newfinishPosition.style.top = (contestantFinishPositionNumber * (constestantSizeNumber + 5) + 5) + "px";
-    // newfinishPosition.innerHTML = ''<img id=trophy src="./images/trophy.svg" height="50px" background-color=' + color + '>'';
-    // newfinishPosition.innerHTML = podiumStep;
-    // newfinishPosition.innerHTML = newpodium;
-
-    /** Création de la div */
-    contestantsPositionsContainer.appendChild(newfinishPosition);
-    ;
+    return flip;
+    return stoprun;
+    };
 };
