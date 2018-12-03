@@ -8,7 +8,7 @@
 
 <body class="body">
 <!-- Header image -->
-  <img id=header class="header" src="./images/header.png">
+  <!-- <img id=header class="header" src="./images/header.png"> -->
 <!-- Jump line --></br></br>
 
   <div>
@@ -19,7 +19,7 @@
   <div class="raceComposent">
     <!-- Where to write a new position of the FinishLine -->
       <label for="finishLineSelectBox" class="text">Distance Parcours</label>
-      <input id="finishLineSelectBox" name="finishLineSelectBox" class ="box raceComposent" onkeyup="finishLinePlace()" value="250">
+      <input id="finishLineSelectBox" name="finishLineSelectBox" class ="box raceComposent" onkeyup="finishLinePlace()" value="100">
   </div>
 <!-- Jump line --></br>
 <!-- Start race button -->
@@ -30,11 +30,16 @@
 <!-- FinishLine -->
 
   <!-- Jump line --></br>
-  <div id="course">
-  <div id ="finishLine" class="finishLine"></div>
-  <div id ="container"></div>
-  <div id = contestantsPositionsContainer></div>
-</div>
+
+  <div id="course" class="course">
+    <div id ="finishLine" class="finishLine"></div>
+    <div id ="contestantsPositionsContainer"></div>
+    <div id="contestantsFinishsPositionscontainer"></div>
+  </div>
+
+
+  <i class="fas fa-trophy"></i>
+
 
 <!-- Scripts -->
   <script src="./javascripts/finishLine.js"></script>
