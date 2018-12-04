@@ -20,7 +20,7 @@ function contestantFinishPosition (id, offsetTop, continueRace){
         trophy = '<i class="fas fa-trophy" color=#cd7f32></i>';
         podiumStep++;
       }else{
-        trophy = '<i class="fas fa-certificate" color="#000"></i>';
+        trophy = '<i class="fas fa-certificate" color="#F5F5F5"></i>';
         podiumStep++;
       }return podiumStep;
     };

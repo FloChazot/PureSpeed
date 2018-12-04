@@ -6,3 +6,10 @@ let contestantElements = Array.prototype.slice.call(document.getElementsByClassN
 addContestantButton();
 addContestantButton();
 addContestantButton();
+
+
+// console.log(contestantElements.length);
+// for(contestantElements.length < 3){
+//   addContestantButton();
+//   console.log(contestantElements.length);
+// };

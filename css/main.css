@@ -37,7 +37,6 @@
   border-radius: 5px;
   text-align: center;
   color: #C0C0C0;
-  /* text: #FFD700; */
   font-weight: bold;
 }
 
@@ -57,11 +56,8 @@
 
 .contestantFinishPosition{
   position: absolute;
-  /* width: 50px; */
   height: 50px;
-  /* border-radius: 50px; */
   text-align: center;
-  /* background-color: #cc0000; */
   color: #000;
   vertical-align: middle;
 }
@@ -72,7 +68,7 @@
   float: left;
   margin-left;
   height: 0px;
-  background-color: #000;
+  background-color: #fff;
 }
 
 .text{
@@ -83,5 +79,5 @@
 /** Body */
 .body{
   /* background-color: #000 */
-  background-color: #fff
+  background-color: #000;
 }
