@@ -17,7 +17,7 @@ let continueRace = true;
         }else{
           continueRace = false;
           element.style.left = finishLine + "px";
-          contestantFinishPosition(element.id, element.offsetTop, continueRace, contestantInterval);
+          contestantFinishPosition(element.id, element.offsetTop, continueRace);
         };
       };
       if(stoprun == true){

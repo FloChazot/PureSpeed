@@ -1,3 +1,11 @@
+function pospos (pos1, pos2){
+let pos1 = 0;
+let pos2 = 0;
+console.log("OUT - pos1 : " + pos1 + " - pos2 : " + pos2);
+return pos1;
+return pos2;
+};
+
 // Position de la FinishLine au lancement de la page
 let finishLineLeft = document.getElementById("finishLineSelectBox").value;
 document.getElementById("finishLine").style.left = finishLineLeft + "px";
@@ -5,9 +13,14 @@ document.getElementById("finishLine").offsetLeft = finishLineLeft;
 
 // Changement de la postion de la FinishLine au cours de la saisie
 function finishLinePlace(){
+  pospos();
   finishLineLeft = document.getElementById("finishLineSelectBox").value;
   document.getElementById("finishLine").style.left = finishLineLeft + "px";
   document.getElementById("finishLine").offsetLeft = finishLineLeft;
+  pos1 = document.getElementById("finishLineSelectBox").value;
+  pos2 = document.getElementById("finishLineSelectBox").value;
+  console.log("MOVE LINE - pos1 : " + pos1 + " - pos2 : " + pos2);
+  pospos(pos1, pos2);
 };
 
 // Changement de la hauteur de la finisLine en fonction du nombre de contestant
@@ -23,8 +36,7 @@ function constestantSizeChangeFinishLine(){
 dragElement(document.getElementById("finishLine"));
 
 function dragElement(finishline) {
- let pos1;
- let pos2;
+pospos();
  finishline.onmousedown = dragMouseDown;
 
   function dragMouseDown(e){
@@ -37,17 +49,22 @@ function dragElement(finishline) {
   function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
-console.log("e.clientX : " + e.clientX);
+
+console.log("1 - pos1 = pos2 + e.clientX ==> " + pos1 + " = " + pos2 + " - " + e.clientX);
     pos1 = pos2 - e.clientX;
-console.log("pos1 : " + pos1);
+console.log("2 - pos1 = pos2 + e.clientX ==> " + pos1 + " = " + pos2 + " - " + e.clientX);
     pos2 = e.clientX;
-console.log("pos2 : " + pos2);
     finishline.style.left = (finishline.offsetLeft - pos1) + "px";
     document.getElementById("finishLineSelectBox").value = finishline.offsetLeft;
+console.log(".............." + pos2);
+    return pos1;
+    return pos2;
   }
 
-  function closeDragElement() {
+  function closeDragElement(pos1, pos2) {
+    pospos(pos1, pos2);
     document.onmouseup = null;
     document.onmousemove = null;
+
   }
 }
