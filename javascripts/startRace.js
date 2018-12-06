@@ -22,6 +22,7 @@ let continueRace = true;
       };
       if(stoprun == true){
         clearInterval(contestantInterval)
+        console.log("1111111111111");
       };
     }, 32);
   });
