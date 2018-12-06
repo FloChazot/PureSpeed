@@ -28,6 +28,7 @@ function contestantFinishPosition (id, offsetTop, continueRace){
   /** Création des données à injecter */
   let newfinishPosition = document.createElement('div');
   newfinishPosition.id = contestantId + "finishPosition"+ id;
+  // newfinishPosition.id = contestantId + "finishPosition";
   newfinishPosition.className = "contestantFinishPosition";
   newfinishPosition.style.left = newfinishPositionLeft;
   newfinishPosition.style.top = contestantFinishPositionNumber * 55 + 13 + "px";
@@ -35,8 +36,7 @@ function contestantFinishPosition (id, offsetTop, continueRace){
   newfinishPosition.innerHTML = trophy;
 
   /** Création de la div */
-  contestantsPositionsContainer.appendChild(newfinishPosition);
-
+  contestantsFinishsPositionscontainer.appendChild(newfinishPosition);
 
   flip = flips();
     function flips(){

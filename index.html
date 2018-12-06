@@ -15,21 +15,22 @@
 
   <div class="raceComposent">
    <label class="text">Concurrents</label>
-   <i id="removeContestantButton" class="button fas fa-minus-circle" onclick="removeContestantButton()"></i>
-   <i id="addContestantButton" class="buttonplus fas fa-plus-circle" onclick="addContestantButton()"></i>
+   <i id="removeContestantButton" class="button fas fa-minus-circle" onmousedown="removeContestantButton()"></i>
+   <i id="addContestantButton" class="buttonplus fas fa-plus-circle" onmousedown="addContestantButton()"></i>
 <!-- Jump line --></br></br>
     <!-- Where to write a new position of the FinishLine -->
       <label for="finishLineSelectBox" class="text">Distance Parcours</label>
-      <input id="finishLineSelectBox" name="finishLineSelectBox" class ="box raceComposent" onkeyup="finishLinePlace()" value="600">
+      <input id="finishLineSelectBox" name="finishLineSelectBox" class ="box raceComposent" onkeyup="finishLinePlace()" value="100">
     <!-- Start race button -->
-      <i id="startRaceButton" class="flag fas fa-flag-checkered" onclick="startRace()"></i>
+      <i id="startRaceButton" class="flag fas fa-flag-checkered" onmousedown="startRace()"></i>
+      <i id="resetRace" class="button fas fa-minus-circle" onclick="resetRace()"></i>
   </div>
 <!-- Jump line --></br>
 
 <!-- FinishLine -->
   <!-- Jump line --></br>
   <div id="course" class="course">
-    <div id ="finishLine" class="finishLine"></div>
+    <div id ="finishLine" class="finishLine" onmouseover="moveYourButt()"></div>
     <div id ="contestantsPositionsContainer"></div>
     <div id="contestantsFinishsPositionscontainer"></div>
   </div>

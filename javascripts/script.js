@@ -7,9 +7,21 @@ addContestantButton();
 addContestantButton();
 addContestantButton();
 
+function resetRace(){
+  if(stoprun == true){
+    contestantElements.forEach(function(element){
+      element.style.left = "0px";
+    });
 
-// console.log(contestantElements.length);
-// for(contestantElements.length < 3){
-//   addContestantButton();
-//   console.log(contestantElements.length);
-// };
+    for(i=0; i < contestantElements.length; i++){
+      let divToRemove = document.getElementById("contestantsFinishsPositionscontainer");
+      divToRemove.removeChild(divToRemove.childNodes[0]);
+    };
+
+    continueRace = true;
+    stoprun = false;
+    flip = 0;
+    podiumStep = 0;
+  };
+// startRace();
+};

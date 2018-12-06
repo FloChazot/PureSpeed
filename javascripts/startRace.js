@@ -1,7 +1,7 @@
 function startRace (){
 let continueRace = true;
 
-  contestantElements.forEach(function (element){
+  contestantElements.forEach(function(element){
     let contestantPosition = parseInt(getComputedStyle(element)["left"]);
 
     /** Récupération de la finishline */
@@ -21,8 +21,8 @@ let continueRace = true;
         };
       };
       if(stoprun == true){
-        clearInterval(contestantInterval)
-        console.log("1111111111111");
+        clearInterval(contestantInterval);
+        // stoprun = true;
       };
     }, 32);
   });
