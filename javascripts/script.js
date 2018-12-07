@@ -7,21 +7,28 @@ addContestantButton();
 addContestantButton();
 addContestantButton();
 
+
 function resetRace(){
+  resetTrophy();
+  resetContestantsPositions();
+
+  continueRace = true;
+  stoprun = false;
+  flip = 0;
+  podiumStep = 0;
+}
+
+function resetTrophy(){
+  for(i=0; i < contestantElements.length; i++){
+    let divToRemove = document.getElementById("contestantsFinishsPositionscontainer");
+    divToRemove.removeChild(divToRemove.childNodes[0]);
+  };
+};
+
+function resetContestantsPositions(){
   if(stoprun == true){
     contestantElements.forEach(function(element){
       element.style.left = "0px";
     });
-
-    for(i=0; i < contestantElements.length; i++){
-      let divToRemove = document.getElementById("contestantsFinishsPositionscontainer");
-      divToRemove.removeChild(divToRemove.childNodes[0]);
-    };
-
-    continueRace = true;
-    stoprun = false;
-    flip = 0;
-    podiumStep = 0;
   };
-// startRace();
 };
