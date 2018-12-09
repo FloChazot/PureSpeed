@@ -54,7 +54,7 @@
   background-color: #cc0000;
 }
 
-.contestantFinishPosition{
+.contestantTrophy{
   position: absolute;
   height: 50px;
   text-align: center;
@@ -63,7 +63,7 @@
 }
 
 /** FinishLine */
-.finishLine{
+.finishline{
   width: 10px;
   position: absolute;
   height: 0px;

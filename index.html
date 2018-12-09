@@ -9,38 +9,38 @@
 </head>
 
 <body class="body">
-<!-- Header image -->
+  <!-- Header image -->
   <img id=header class="header" src="./images/header.png">
-<!-- Jump line --></br></br>
-
+  </br></br>
   <div class="raceComposent">
    <label class="text">Concurrents</label>
-   <i id="removeContestantButton" class="button fas fa-minus-circle" onmousedown="removeContestantButton()"></i>
-   <i id="addContestantButton" class="buttonplus fas fa-plus-circle" onmousedown="addContestantButton()"></i>
-<!-- Jump line --></br></br>
+   <i id="removeContestantButton" class="button fas fa-minus-circle" onmousedown="removeContestant()"></i>
+   <i id="addContestantButton" class="buttonplus fas fa-plus-circle" onmousedown="addContestant()"></i>
+  </br></br>
     <!-- Where to write a new position of the FinishLine -->
-      <label for="finishLineSelectBox" class="text">Distance Parcours</label>
-      <input id="finishLineSelectBox" name="finishLineSelectBox" class ="box raceComposent" onkeyup="finishLinePlace()" value="100">
+    <label for="finishlineRangeBox" class="text">Distance Parcours</label>
+    <input id="finishlineRangeBox" name="finishineRangeBox" class ="box raceComposent" onkeyup="movefinishlineWithRangeBox()" value="100">
     <!-- Start race button -->
-      <i id="startRaceButton" class="flag fas fa-flag-checkered" onmousedown="startRace()"></i>
-      <i id="resetRace" class="button fas fa-minus-circle" onclick="resetRace()"></i>
+    <i id="startRaceButton" class="flag fas fa-flag-checkered" onmousedown="startRace()"></i>
+    <i id="resetRace" class="button fas fa-minus-circle" onclick="resetRace()"></i>
   </div>
-<!-- Jump line --></br>
-
-<!-- FinishLine -->
-  <!-- Jump line --></br>
+  </br></br>
   <div id="course" class="course">
-    <div id ="finishLine" class="finishLine" onmouseover="moveYourButt()"></div>
-    <div id ="contestantsPositionsContainer"></div>
-    <div id="contestantsFinishsPositionscontainer"></div>
+    <div id="finishline" class="finishline" onmouseover="moveFinishline()"></div>
+    <div id="contestantsContainer"></div>
+    <div id="contestantsTrophiesContainer"></div>
   </div>
 
-<!-- Scripts -->
-  <script src="./javascripts/finishLine.js"></script>
-  <script src="./javascripts/selectContestant.js"></script>
-  <script src="./javascripts/startRace.js"></script>
-  <script src="./javascripts/vitesseDeplacement.js"></script>
-  <script src="./javascripts/contestantFinishPosition.js"></script>
+  <!-- Scripts -->
+  <script src="./javascripts/variables.js"></script>
+
+  <script src="./javascripts/clean/finishline.js"></script>
+  <script src="./javascripts/clean/contestantsNumber.js"></script>
+  <script src="./javascripts/clean/contestantsSpeed.js"></script>
+
+  <script src="./javascripts/contestantsTrophy.js"></script>
+  <script src="./javascripts/race.js"></script>
   <script src="./javascripts/script.js"></script>
+
 </body>
 </html>
