@@ -1,4 +1,4 @@
-/** Créer un nouveau trophée */
+/** Créer un nouveau trophé */
 function createTrophy (id, offsetTop){
   /** Récupération de la place du concurrent contenu dans l'ID de sa 'div' */
   let contestantFinishPositionNumber = id.substr(10);
@@ -8,19 +8,16 @@ function createTrophy (id, offsetTop){
   podiumStep = podium();
       function podium(){
       if(podiumStep == 0){
-        /** Position 1 => Trophée Or */
         trophy = 'fas fa-trophy';
-        trophyColor = '#FFD700';
+        trophyColor = '#FFD700'; /** Position 1 => Trophée Or */
         podiumStep++;
       }else if(podiumStep == 1){
-        /** Position 2 => Trophée Argent */
         trophy = 'fas fa-trophy';
-        trophyColor = '#C0C0C0';
+        trophyColor = '#C0C0C0'; /** Position 2 => Trophée Argent */
         podiumStep++;
       }else if(podiumStep == 2){
-        /** Position 3 => Trophée Bronze */
         trophy = 'fas fa-trophy';
-        trophyColor = '#cd7f32';
+        trophyColor = '#cd7f32'; /** Position 3 => Trophée Bronze */
         podiumStep++;
       }else{
         /** Position 4+ => Fanion avec position dedans */
@@ -40,18 +37,17 @@ function createTrophy (id, offsetTop){
   newTrophy.innerHTML = '<i class = "' + trophy + '" color = "' + trophyColor + '"></i>';
   /** Création de la div */
   contestantsTrophiesContainer.appendChild(newTrophy);
-  /** Mise à jour du tableau contestantElements après création */
+  /** Mise à jour du tableau contestantTrophyElements après création */
   contestantTrophyElements = Array.prototype.slice.call(document.getElementsByClassName(contestantTrophyClass));
 };
 
-
-// A REVOIR !!!!!!!!!!!!!
-/** Retirer tous les trophées */
-function removeTrophies(){
+/** Supprimer tous les trophés */
+function removeAllTrophies(){
   for(i=0; i < contestantTrophyElements.length; i++){
-    let removeTrophy = document.getElementById(contestantsTrophiesContainer);
-    console.log(removeTrophy);
-    removeTrophy.removeChild(removeTrophy.childNodes[0]);
+  contestantsTrophiesContainer.removeChild(contestantsTrophiesContainer.childNodes[0]);
   };
+  /** Mise à jour du tableau contestantTrophyElements après suppression des trophés dans l'index */
   contestantTrophyElements = Array.prototype.slice.call(document.getElementsByClassName(contestantTrophyClass));
+  /** Plus de trophés donc le podiumStep repart à 0 pour redonner le trophé en Or */
+  podiumStep = 0;
 };

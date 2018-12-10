@@ -4,6 +4,7 @@ document.getElementById(finishline).style.left = finishlineLeftPosition + "px";
 
 /** Changer la postion de la Finishline au cours de la saisie dans la finishlineRangeBox */
 function movefinishlineWithRangeBox(){
+  resetRace(); /**Remet les concurrents au départ et enlève les trophées si une course est en cours */
   finishlineLeftPosition = document.getElementById(finishlineRangeBox).value;
   document.getElementById(finishline).style.left = finishlineLeftPosition + "px";
 };
@@ -22,6 +23,7 @@ function moveFinishline (){
     finishline.onmousedown = dragMouseDown;
 
     function dragMouseDown(cursor){
+      resetRace(); /**Remet les concurrents au départ et enlève les trophées si une course est en cours */
       cursor = cursor || window.event;
       cursor.preventDefault();
       document.onmouseup = closeDragElement;

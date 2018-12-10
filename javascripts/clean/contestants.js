@@ -1,5 +1,7 @@
 /** Créer un nouveau concurrent */
 function addContestant (){
+  /** Redémarre une course avant l'ajout d'un concurrent */
+  resetRace()
   /** Création des paramètres de la div qui contient le concurrent*/
   let newContestant = document.createElement('div');
   newContestant.id = contestantId + contestantElements.length;
@@ -17,14 +19,23 @@ function addContestant (){
 
 /** Supprimer le dernier concurrent */
 function removeContestant (){
+  /** Redémarre une course avant la suppression d'un concurrent */
+  resetRace()
   /** Suppression du dernier concurrent créé en récupérant le contestantId*/
   if(contestantElements.length > 0){
     let remove = contestantId + (contestantElements.length - 1);
     remove = document.getElementById(remove);
     remove.parentNode.removeChild(remove);
-  /** Mise à jour du tableau contestantElements après ajout du concurrent dans l'index */
+  /** Mise à jour du tableau contestantElements après suppression du concurrent dans l'index */
   contestantElements = Array.prototype.slice.call(document.getElementsByClassName(contestantClass));
   /** Modification de la hauteur de la finishLine en fonction du nombre de concurrent*/
   changeFinishLineSize();
   }
+};
+
+/** Replacer tous les concurrents au point de départ */
+function resetAllContestantsLeftPosition(){
+    contestantElements.forEach(function(element){
+      element.style.left = "0px";
+    });
 };
