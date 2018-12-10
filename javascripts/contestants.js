@@ -1,4 +1,3 @@
-/** Créer un nouveau concurrent */
 function addContestant (){
   resetRace()
   /** Création des paramètres de la div qui contient le concurrent*/
@@ -15,7 +14,6 @@ function addContestant (){
   changeFinishLineSize();
 };
 
-/** Supprimer le dernier concurrent */
 function removeContestant (){
   resetRace()
   /** Suppression du dernier concurrent créé en récupérant le contestantId*/
@@ -23,15 +21,14 @@ function removeContestant (){
     let remove = contestantId + (contestantElements.length - 1);
     remove = document.getElementById(remove);
     remove.parentNode.removeChild(remove);
-  /** Mise à jour du tableau contestantElements après suppression du concurrent dans l'index */
-  contestantElements = Array.prototype.slice.call(document.getElementsByClassName(contestantClass));
-  changeFinishLineSize();
+    /** Mise à jour du tableau contestantElements après suppression du concurrent dans l'index */
+    contestantElements = Array.prototype.slice.call(document.getElementsByClassName(contestantClass));
+    changeFinishLineSize();
   }
 };
 
-/** Replacer tous les concurrents au point de départ */
 function resetAllContestantsLeftPosition(){
-    contestantElements.forEach(function(element){
-      element.style.left = "0px";
-    });
+  contestantElements.forEach(function(element){
+    element.style.left = "0px";
+  });
 };

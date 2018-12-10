@@ -1,9 +1,8 @@
-/** Créer un nouveau trophé */
 function createTrophy (id, offsetTop){
   /** Récupération de la place du concurrent contenu dans l'ID de sa 'div' */
   let contestantFinishPositionNumber = id.substr(10);
   /** Récupération de la position de la finisline pour placer le trophée */
-  let newTrophyLeftPosition = Number(document.getElementById(finishlineRangeBox).value) + 20;
+  let newTrophyLeftPosition = Number(document.getElementById(finishlineRangeBox).value) + constestantSize + 20;
   /** Choix du trophée à afficher en fonction de la position du concurrent dans la course */
   podiumStep = podium();
       function podium(){
@@ -58,7 +57,6 @@ function createTrophyPosition(id, offsetTop, newTrophyLeftPosition, contestantFi
   contestantsTrophiesPositionContainer.appendChild(newTrophyposition);
 };
 
-/** Supprimer tous les trophés */
 function removeAllTrophies(){
   for(i=0; i < contestantTrophyElements.length; i++){
   contestantsTrophiesContainer.removeChild(contestantsTrophiesContainer.childNodes[0]);
@@ -69,9 +67,8 @@ function removeAllTrophies(){
   podiumStep = 0;
 };
 
-/** Supprimer toutes les positions de tous les trophés */
 function removeAllTrophyPosition(){
-  for(i=3; i < contestantTrophyElements.length; i++){
+  for(i=3; i < contestantTrophyElements.length; i++){ /** i = 3 car il n'y a pas de position pour la place 1 à 3 */
   contestantsTrophiesPositionContainer.removeChild(contestantsTrophiesPositionContainer.childNodes[0]);
 };
 };
