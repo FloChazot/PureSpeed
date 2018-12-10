@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>PureSpeed</title>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="./images/favicon.png"/>
+  <link rel="stylesheet" href="./css/main.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+</head>
+
+<body class="body">
+  <!-- Header image -->
+  <img id=header class="header" src="./images/header.png">
+  </br></br>
+  <div class="raceComposent">
+   <label class="text">Concurrents</label>
+   <i id="removeContestantButton" class="button fas fa-minus-circle" onmousedown="removeContestant()"></i>
+   <i id="addContestantButton" class="buttonplus fas fa-plus-circle" onmousedown="addContestant()"></i>
+  </br></br>
+    <!-- Where to write a new position of the FinishLine -->
+    <label for="finishlineRangeBox" class="text">Distance Parcours</label>
+    <input id="finishlineRangeBox" name="finishineRangeBox" class ="box raceComposent" onkeyup="movefinishlineWithRangeBox()" value="100">
+    <!-- Start race button -->
+  </div>
+  </br></br>
+  <div id="course" class="course">
+    <div id="finishline" class="finishline" onmouseover="moveFinishline()"></div>
+    <div id="contestantsContainer"></div>
+    <div id="contestantsTrophiesContainer"></div>
+    <div id="contestantsTrophiesPositionContainer"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./javascripts/variables.js"></script>
+  <script src="./javascripts/contestants.js"></script>
+  <script src="./javascripts/contestantsSpeed.js"></script>
+  <script src="./javascripts/contestantsTrophy.js"></script>
+  <script src="./javascripts/finishline.js"></script>
+  <script src="./javascripts/duel/race.js"></script>
+  <script src="./javascripts/duel/script.js"></script>
+
+</body>
+</html>
