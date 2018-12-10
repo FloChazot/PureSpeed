@@ -29,6 +29,7 @@ function startRace(){
  /**Remet les concurrents au départ et enlève les trophées si une course est en cours */
 function resetRace(){
   onRace = false; /** onRace = false permet d'arrêter la fonction startRace en cours*/
+  removeAllTrophyPosition();
   removeAllTrophies();
   resetAllContestantsLeftPosition();
 };

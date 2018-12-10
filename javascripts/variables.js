@@ -7,6 +7,10 @@ let finishline = "finishline";
 let contestantTrophyClass = "contestantTrophy";
 let contestantTrophyElements = Array.prototype.slice.call(document.getElementsByClassName(contestantTrophyClass));
 
+
+let contestantTrophyPositionClass = "contestantTrophyPosition";
+
+
 /** Gestion des éléments & des intutilés pour les concurrents */
 /** contestantsContainer de l'index : Utilisé dans contestantsNumber.js*/
 let contestantId = "contestant";

@@ -62,6 +62,15 @@
   vertical-align: middle;
 }
 
+.contestantTrophyPosition{
+  position: absolute;
+  height: 50px;
+  text-align: center;
+  color: #000;
+  vertical-align: middle;
+  font-weight: 700;
+}
+
 /** FinishLine */
 .finishline{
   width: 10px;
